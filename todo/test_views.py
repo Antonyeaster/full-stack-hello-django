@@ -25,7 +25,7 @@ class TestViews(TestCase):
     def test_can_add_item(self):
         responce = self.client.post('/add', {'name': 'Test Added Item'})
         self.assertRedirects(responce, '/')
-           
+
     def test_can_delete_item(self):
         item = Item.objects.create(name='Test Todo Item')
         responce = self.client.get(f'/delete/{item.id}')
@@ -42,7 +42,8 @@ class TestViews(TestCase):
 
     def test_can_edit_item(self):
         item = Item.objects.create(name='Test Todo Item')
-        responce = self.client.post(f'/edit/{item.id}', {'name': 'Updated Name'})
+        responce = self.client.post(
+            f'/edit/{item.id}', {'name': 'Updated Name'})
         self.assertRedirects(responce, '/')
         updated_item = Item.objects.get(id=item.id)
         self.assertEqual(updated_item.name, 'Updated Name')
