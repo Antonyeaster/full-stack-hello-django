@@ -3,8 +3,6 @@
 import os
 import sys
 
-import env
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_todo.settings')
