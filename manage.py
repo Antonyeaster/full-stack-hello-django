@@ -3,10 +3,7 @@
 import os
 import sys
 
-<<<<<<< HEAD
 import env
-=======
->>>>>>> 8ef53d541c8e27a97288c6be4051724120c550ab
 
 def main():
     """Run administrative tasks."""
